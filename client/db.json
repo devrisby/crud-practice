@@ -1,0 +1,16 @@
+{
+    "movies": [
+        {
+            "title": "The Godfather",
+            "year": 1972
+        },
+        {
+            "title": "Raging Bull",
+            "year": 1980
+        },
+        {
+            "title": "Citizen Kane",
+            "year": 1942
+        }
+    ]
+}
