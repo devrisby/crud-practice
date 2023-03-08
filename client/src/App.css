@@ -1,0 +1,21 @@
+.app {
+    display:flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.movies {
+    width: 100%;
+}
+
+.movie  {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.movie p {
+    margin-bottom: 0.3em;
+}
