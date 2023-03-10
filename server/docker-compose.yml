@@ -1,0 +1,16 @@
+# To run:
+# RUN: `docker compose up -d`
+# Set MONGO_URI inside `.env.` file as: MONGO_URI="mongodb://localhost:27017/crudpractice"
+name: 'crud-practice'
+services:
+  mongo:
+    image: mongo
+    container_name: 'crud-practice-mongodb'
+    command: mongod --quiet --logpath /dev/null 
+    ports:
+      - "27017:27017"
+    volumes:
+      - crud-practice-data:/data/db
+volumes:
+  crud-practice-data:
+    driver: local
