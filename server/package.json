@@ -6,12 +6,16 @@
   "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^7.0.1",
-    "nodemon": "^2.0.21"
+    "mongoose": "^7.0.1"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node src/index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }

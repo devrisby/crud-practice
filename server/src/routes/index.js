@@ -1,7 +1,7 @@
 
 import express from "express";
 const router = express.Router();
-import movieController from "../../controllers/movieController.js";
+import movieController from "../controllers/movieController.js";
 
 router.get('/api/movies', movieController.getAllMovies);
 router.post('/api/movies', movieController.addMovie);

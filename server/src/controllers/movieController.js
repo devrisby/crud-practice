@@ -11,11 +11,15 @@ async function addMovie(req, res) {
 
 //Get a movie by ID
 async function getMovie(req, res) {
+  try {
   const movie = await Movie.findById(req.params.id);
   if (!movie) {
     return res.status(404).json({ error: 'No movie found.' });
   }
   res.json(movie);
+} catch {
+   res.status(400).json({error: "Invalid Id"});
+}
 }
 
 //Get all movies
