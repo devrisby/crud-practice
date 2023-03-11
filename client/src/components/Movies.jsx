@@ -1,5 +1,6 @@
 import React from 'react'
 import Movie from "./Movie"
+import axios from 'axios'
 import { useState } from 'React'
 
 const Movies = ({movies}) => {
@@ -9,9 +10,13 @@ const Movies = ({movies}) => {
         year: '',
     })
 
+    const baseUrl = 'http://localhost:3001/movies'
+    const create = (newMovie) => axios.post(baseUrl, newMovie)
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(form)
+        create()
     }
 
     return (
