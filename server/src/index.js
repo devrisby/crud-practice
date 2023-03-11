@@ -2,11 +2,18 @@ import express from "express";
 import cors from "cors";
 import * as config from './config.js'
 import { startDb } from "./data/db.js";
-
+import routes from "../src/routes/index.js"
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(routes);
 
+app.use((err, req, res, next) => {
+if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+  res.status(400).json({error: "Invalid JSON"});
+}
+next();
+});
 
 app.get("/api/health", (req, res) => {
   res.json("This is working").status(200);
