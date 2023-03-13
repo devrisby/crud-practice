@@ -12,6 +12,7 @@
     "mongoose": "^7.0.1"
   },
   "scripts": {
+    "seed": "node src/data/seed/index.js",
     "start": "node src/index.js",
     "dev": "cross-env NODE_ENV=dev nodemon src/index.js"
   },
